@@ -152,13 +152,13 @@ namespace Orbital {
 
     EclipseState eclipseState(const Vec3 &rECI, const Vec3 &rSunECI) {
         double rSunDist = rSunECI.norm();
-        Vec3 sunUnit = (rSunECI * -1).normalize();
+        Vec3 sunlightUnit = (rSunECI * -1).normalize();
 
-        double sat_proj = rECI.dot(sunUnit);
+        double sat_proj = rECI.dot(sunlightUnit);
 
         if (sat_proj < 0) return EclipseState::SUNLIT;
 
-        Vec3 perp_vec = rECI - sunUnit * sat_proj;
+        Vec3 perp_vec = rECI - sunlightUnit * sat_proj;
         double perp = perp_vec.norm();
 
         double f_umbra = asin((R_SUN - R_EARTH) / rSunDist);
