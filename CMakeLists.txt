@@ -8,4 +8,5 @@ add_executable(untitled main.cpp
         main.cpp
         OrbitalEnvironment.cpp
         OrbitalEnvironment.h
+        OrbitalEnvironmentTests.cpp
 )

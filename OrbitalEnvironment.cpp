@@ -100,7 +100,7 @@ namespace Orbital {
     }
 
     Vec3 dipoleMagneticField(const Vec3 &r_ECI, double t_seconds) {
-        constexpr double MU_M = 8.0e22;
+        constexpr double MU_M = 7.94e15;
 
         double gst = computeGST(t_seconds);
         Vec3 r_ECEF = eciToECEF(gst) * r_ECI;
